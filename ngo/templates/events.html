@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Adopt a child:</title>
+    <style>
+        h2{color:aquamarine}
+        h3{
+            color: aquamarine;
+        }
+        body{
+            background-color:rgb(8, 8, 8);
+            text-align: center;
+        }
+        .submit {
+            background-color: #6debb0;
+            border-radius: 3cm;
+            height: 30px;
+        }
+        .header{
+            float: left;
+            padding: 20px 40px;
+            font-size: 25px;
+            font-weight: 300;
+            font-style: bold;
+        }
+        .content {
+            padding: 20px;
+            float: left;
+            font-family:'Times New Roman', Times, serif;
+            text-align: center;
+
+        }
+        .form-group{
+            padding: 20px;
+            align-items:flex-start;
+        }
+        .header-logo {
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" class="adoptation" id="adoptation" action="{% url 'adopt' %}">
+        {% csrf_token %}
+        <div class="header">
+            <div class="header-logo"><h2>Adoptation Form</h2></div>
+        </div>
+        <div class="content">
+            <div class="form-row"><div class="form-group">
+                <label for="name"><h3>Name :</h3></label>
+                <input type="text" name="name" id="name" required/>
+            </div>
+            <div class="form-row"><div class="form-group">
+                <label for="name"><h3>Address :</h3></label>
+                <input type="text" name="address" id="address" required/>
+            </div>
+            <div class="form-row"><div class="form-group">
+                <label for="name"><h3>Phone :</h3></label>
+                <input type="text" name="phone" id="phone" required/>
+            </div>
+            <div class="form-submit">
+                 <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+             </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

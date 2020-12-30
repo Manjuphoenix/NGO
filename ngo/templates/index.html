@@ -38,7 +38,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="{% static 'img/logo.png' %}" alt="logo"> </a>
+                        <a class="navbar-brand" href="index.html"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
                         <div class="collapse navbar-collapse main-menu-item justify-content-end"
                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
-                                <li class="nav-item">
+                                <!--<li class="nav-item">
                                     <a class="nav-link" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item">
@@ -85,7 +85,7 @@
                                 <li class="d-none d-lg-block">
                                     <a class="btn_2" href="#">learn more</a>
                                 </li>
-                            </ul>
+                            </ul>-->
                         </div>
                     </nav>
                 </div>
@@ -105,7 +105,6 @@
                                 Children in Need </h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut</p>
-                            <a href="#" class="btn_2">Start Donation</a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +114,7 @@
                             <img src="{% static 'img/banner_video.png' %}" alt="">
                             <div class="extends_video">
                                 <a id="play-video_1" class="video-play-button popup-youtube"
-                                    href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    href="https://www.youtube.com/watch?v=E1xkXZs0cAQ">
                                     <span class="fas fa-play"></span>
                                 </a>
                             </div>
@@ -140,7 +139,7 @@
                             sed do eiusmod tempor incididunt ut labore et dolore magna
                             Lorem ipsum dolor sit amet consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore magna </p>
-                        <a href="service.html" class="btn_3">learn more</a>
+                        <a href="#" class="btn_3">learn more</a>
                     </div>
                 </div>
                 <div class="col-lg-7 col-xl-6">
@@ -149,9 +148,9 @@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_service_text ">
                                     <i class="flaticon-money"></i>
-                                    <h4>Education</h4>
-                                    <p>Education brings prosperity</p>
-                                    <a href="/education">donate now</a>
+                                    <h4>Donate</h4>
+                                    <p>To donate you dont need money, all that is required is a good heart!</p>
+                                    <a href="/donation">donate now</a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
@@ -166,17 +165,17 @@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_service_text">
                                     <i class="flaticon-money"></i>
-                                    <h4>Healthcare</h4>
+                                    <h4>Donation</h4>
                                     <p>Without health, life is almost dead!</p>
-                                    <a href="/health">read more</a>
+                                    <a href="/donation">read more</a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_service_text">
                                     <i class="flaticon-money"></i>
-                                    <h4>Disaster Management</h4>
+                                    <h4>Events</h4>
                                     <p>Prepare before its too late</p>
-                                    <a href="/disaster">donate now</a>
+                                    <a href="/events">Host an event</a>
                                 </div>
                             </div>
                         </div>
@@ -209,9 +208,8 @@
                             have procured used test and measurement instruments.</p>
                         <div class="banner_item">
                             <div class="single_item">
-                                <h2> <span class="count">50</span>k</h2>
-                                <h5>Total
-                                    Volunteer</h5>
+                                <h2> count {{count}} </h2>
+                                <a href="/vollist"><h5>Total Volunteer</h5></a>
                             </div>
                             <div class="single_item">
                                 <h2><span class="count">25</span>k</h2>
@@ -228,10 +226,11 @@
                     </div>
                    
                 </div>
+                <!--
                 <div class="col-lg-12">
                     <div class="text-center about_btn">
                             <a class="btn_3 " href="#">learn more</a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -239,6 +238,7 @@
     <!-- about part end-->
 
     <!--::passion part start::-->
+    <!--
     <section class="passion_part passion_section_padding">
         <div class="container">
             <div class="row">
@@ -250,6 +250,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row">
                 {% for cause in causes %}
                 <div class="col-sm-6 col-lg-4 col-xl-4">
@@ -285,7 +286,7 @@
                 {% endfor %}       
                     </div>
                 </div>
-           
+            -->
     </section>
     <!--::passion part end::-->
 
@@ -307,13 +308,13 @@
     </section>
     <!-- intro_video_bg part start-->
 
-    <!--::event_part start::-->
+    <!--::event_part start::
     <section class="event_part">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-md-8">
                     <div class="section_tittle">
-                        <h2>Upcoming Event</h2>
+                        <h2>Previous Events</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore magna </p>
                     </div>
@@ -328,9 +329,9 @@
                             <h5 class="mt-0">Volunteeer Idea 2020</h5>
                             <p>Seed the life upon you are creat.</p>
                             <ul>
-                                <li><span id="days"></span>days</li>
-                                <li><span id="hours"></span>Hours</li>
-                                <li><span id="minutes"></span>Minutes</li>
+                                <li><span id="days"></span>2 days</li>
+                                <li><span id="hours"></span>12 Hours</li>
+                                <li><span id="minutes"></span>20 Minutes</li>
                             </ul>
                         </div>
                     </div>
@@ -343,9 +344,9 @@
                             <h5 class="mt-0">Volunteeer Idea 2020</h5>
                             <p>Seed the life upon you are creat.</p>
                             <ul>
-                                <li><span id="days1"></span>days</li>
-                                <li><span id="hours1"></span>Hours</li>
-                                <li><span id="minutes1"></span>Minutes</li>
+                                <li><span id="days1"></span>1 days</li>
+                                <li><span id="hours1"></span>1 Hours</li>
+                                <li><span id="minutes1"></span>10 Minutes</li>
                             </ul>
 
                         </div>
@@ -359,9 +360,9 @@
                             <h5 class="mt-0">Volunteeer Idea 2020</h5>
                             <p>Seed the life upon you are creat.</p>
                             <ul>
-                                <li><span id="days2"></span>days</li>
-                                <li><span id="hours2"></span>Hours</li>
-                                <li><span id="minutes2"></span>Minutes</li>
+                                <li><span id="days2"></span>5 days</li>
+                                <li><span id="hours2"></span>5 Hours</li>
+                                <li><span id="minutes2"></span>5 Minutes</li>
                             </ul>
                         </div>
                     </div>
@@ -374,19 +375,97 @@
                             <h5 class="mt-0">Volunteeer Idea 2020</h5>
                             <p>Seed the life upon you are creat.</p>
                             <ul>
-                                <li><span id="days3"></span>days</li>
-                                <li><span id="hours3"></span>Hours</li>
-                                <li><span id="minutes3"></span>Minutes</li>
+                                <li><span id="days3"></span>3 days</li>
+                                <li><span id="hours3"></span>3 Hours</li>
+                                <li><span id="minutes3"></span>30 Minutes</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section>--> 
+<br>
+    <div class="site-section bg-light" id="contact-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2 class="text-black section-title text-uppercase">Contact Us</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 mb-5">
+              <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                  <div class="col-md-6 mb-4 mb-lg-0">
+                    <input type="text" name="fname" id="fname" class="form-control" placeholder="First name">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" name= "lname" id="lname" class="form-control" placeholder="Last name">
+                  </div>
+                </div>
+  
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <input type="text" name="email" id="email"  class="form-control" placeholder="Email address">
+                  </div>
+                </div>
+  
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <textarea name="message" id="message" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-6 ml-auto">
+                    <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Send Message">
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+  
+  <br>
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-8">
+                  <h2 class="footer-heading mb-4">About Us</h2>
+                  <p>About</p>
+                </div>
+                <div class="col-md-4 ml-auto">
+                  <h2 class="footer-heading mb-4">Features</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-md-4 ml-auto">
+  
+              <div class="mb-5">
+  <!--<div class="mb-5">
+                  <h2 class="footer-heading mb-4">Some Paragraph</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nostrum libero iusto dolorum vero atque aliquid.</p>
+                </div>-->
+                <br>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
     <!--::event_part end::-->
 
-    <!--::blog_part start::-->
+    <!--::blog_part start::--><!--
     <section class="blog_part padding_bottom">
         <div class="container">
             <div class="row justify-content-center">
@@ -465,10 +544,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!--::blog_part end::-->
 
     <!--::our client part start::-->
+    <!--
     <section class="client_part padding_bottom">
         <div class="container">
             <div class="row justify-content-center">
@@ -478,6 +558,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="client_logo owl-carousel">
@@ -501,9 +582,9 @@
             </div>
         </div>
     </section>
-    <!--::our client part end::-->
+    ::our client part end::
 
-    <!--::footer_part start::-->
+    ::footer_part start::
     <footer class="footer_part">
         <div class="container">
             <div class="row justify-content-around">
@@ -586,13 +667,14 @@
                     </div>
                 </div>
             </div>
+            
             <hr>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="copyright_text">
-                        <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <P> Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
+ Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </P>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -608,40 +690,40 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
-    <!--::footer_part end::-->
+    ::footer_part end::
 
-    <!-- jquery plugins here-->
+     jquery plugins here
 
     <script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
-    <!-- popper js -->
+     popper js 
     <script src="{% static 'js/popper.min.js' %}"></script>
-    <!-- bootstrap js -->
+     bootstrap js 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- easing js -->
+     easing js 
     <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
-    <!-- swiper js -->
+     swiper js 
     <script src="{% static 'js/swiper.min.js' %}"></script>
     <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/jquery.smooth-scroll.min.js' %}"></script>
-    <!-- swiper js -->
+     swiper js 
     <script src="{% static 'js/masonry.pkgd.js' %}"></script>
-    <!-- particles js -->
+     particles js 
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
-    <!-- swiper js -->
+     swiper js 
     <script src="{% static 'js/slick.min.js' %}"></script>
     <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
     <script src="{% static 'js/waypoints.min.js' %}"></script>
     <script src="{% static 'js/countdown.jquery.min.js' %}"></script>
     <script src="{% static 'js/timer.js' %}"></script>
-    <!-- contact js -->
+     contact js 
     <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
     <script src="{% static 'js/jquery.form.js' %}"></script>
     <script src="{% static 'js/jquery.validate.min.js' %}"></script>
     <script src="{% static 'js/mail-script.js' %}"></script>
     <script src="{% static 'js/contact.js' %}"></script>
-    <!-- custom js -->
-    <script src="{% static 'js/custom.js' %}"></script>
+     custom js 
+    <script src="{% static 'js/custom.js' %}"></script>-->
 </body>
 
 </html>

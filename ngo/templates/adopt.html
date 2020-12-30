@@ -1,1 +1,81 @@
-adopting a child page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Adoption Form</title>
+    <style>
+        h2{color:rgb(13, 236, 162)}
+        h3{
+            color:rgb(13, 236, 162);
+            animation: text;
+        }
+        body{
+            background-color:rgb(8, 8, 8);
+            text-align: center;
+        }
+        .submit {
+            background-color:rgb(13, 236, 162);
+            border-radius: 3cm;
+            height: 30px;
+        }
+        .header{
+            float: left;
+            font-size: 25px;
+            font-weight: 300;
+            font-style: bold;
+        }
+        .content {
+            float: left;
+            font-family:'Times New Roman', Times, serif;
+            text-align: center;
+
+        }
+
+        .form-group{
+            padding: 20px;
+            align-items:flex-start;
+        }
+        .header-logo {
+            padding: 10px 30px;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
+        }
+        .logo{
+            color: white;
+        }
+        .span h3{
+            color: rgb(13, 236, 162);
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" class="adoption" id="adoption" action="{% url 'adopt' %}">
+        {% csrf_token %}
+        <div class="header">
+            <div ><div class="header-logo">"Childrens should be considered as God in real life, especially Girl child"</div></div>
+        </div>
+        <div class="content">
+            <div class="form-row"><div class="form-group">
+                <div class="logo"><h2>Adoption Form: </h2></div>
+                <br>
+                <label for="name"><h3>Name :</h3></label>
+                <input type="text" name="name" id="name" required/>
+            </div>
+            <div class="form-row"><div class="form-group">
+                <label for="name"><h3>Address :</h3></label>
+                <input type="text" name="address" id="address" required/>
+            </div>
+            <div class="form-row"><div class="form-group">
+                <label for="name"><h3>Phone :</h3></label>
+                <input type="text" name="phone" id="phone" required/>
+            </div>
+            <div class="form-submit">
+                 <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+             </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
