@@ -1,23 +1,38 @@
+{% load static %}
+{% static "img/passion" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="title">Adoption Form</title>
     <style>
-        h2{color:rgb(13, 236, 162)}
-        h3{
-            color:rgb(13, 236, 162);
-            animation: text;
+        i{
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+        }
+        
+        h3,h2{
+            color: rgb(255, 238, 0);
+            position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  font-family:'Kristen ITC';
         }
         body{
-            background-color:rgb(8, 8, 8);
+            background-image: url("{% static 'img/adopt.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
             text-align: center;
         }
         .submit {
             background-color:rgb(13, 236, 162);
             border-radius: 3cm;
             height: 30px;
+            font-family:'Kristen ITC';
         }
         .header{
             float: left;
@@ -27,7 +42,7 @@
         }
         .content {
             float: left;
-            font-family:'Times New Roman', Times, serif;
+            
             text-align: center;
 
         }
@@ -37,9 +52,13 @@
             align-items:flex-start;
         }
         .header-logo {
-            padding: 10px 30px;
-            color: white;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            float: left;
+            padding: 20px 40px;
+            font-size: 40px;
+            font-weight: 300;
+            font-family:'Bradley Hand ITC';
+            font-style: bold;
+            color:rgb(13, 117, 236);
             
         }
         .logo{
@@ -48,13 +67,33 @@
         .span h3{
             color: rgb(13, 236, 162);
         }
+        input[type=text], input[type=number],[type=email],textarea {  
+            width: 80%;  
+            padding: 10px;  
+            margin: 6px 0 10px 0;  
+            display: inline-block;  
+            border: none;  
+            background: #f1f1f1;  
+            position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+          }  
+          input[type=text]:focus, input[type=number]:focus,[type=email]:focus {  
+            background-color: aquamarine;  
+            outline: none;  
+          }
+        @keyframes example {
+            
+            0%  {background-color:""; left:550px; top:0px;}
+            100% {background-color:""; left:0px; top:0px;}
+          }
     </style>
 </head>
 <body>
     <form method="POST" class="adoption" id="adoption" action="{% url 'adopt' %}">
         {% csrf_token %}
         <div class="header">
-            <div ><div class="header-logo">"Childrens should be considered as God in real life, especially Girl child"</div></div>
+            <div ><div class="header-logo"><b>"Childrens should be considered as God in real life,<br> especially Girl child"</b></div></div>
         </div>
         <div class="content">
             <div class="form-row"><div class="form-group">
@@ -72,7 +111,7 @@
                 <input type="text" name="phone" id="phone" required/>
             </div>
             <div class="form-submit">
-                 <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                 <i><input type="submit" value="ADOPT NOW!!!" class="btn btn-warning" name="submit" id="submit" /></i>
              </div>
             </div>
         </div>
