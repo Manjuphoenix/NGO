@@ -1,34 +1,51 @@
+{% load static %}
+{% static "img/passion" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="title">Donate:</title>
     <style>
+        b{
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+        }
         h2{color:aquamarine}
-        h3{
-            color: aquamarine;
+        h4{
+            color: red;
+            position: relative;
+  animation-name: example;
+  animation-duration: 4s;
         }
         body{
-            background-color:rgb(8, 8, 8);
+            background-image: url("{% static 'img/donate.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
             text-align: center;
         }
         .submit {
             background-color: #6debb0;
             border-radius: 3cm;
             height: 30px;
+            font-family:'Bradley Hand ITC';
+            font-size: 20px;
         }
         .header{
             float: left;
             padding: 20px 40px;
-            font-size: 25px;
+            font-size: 35px;
             font-weight: 300;
+            font-family:'Bradley Hand ITC';
             font-style: bold;
         }
         .content {
-            padding: 20px;
+            padding: 0px;
             float: left;
-            font-family:'Times New Roman', Times, serif;
+            font-family:'MV Boli';
             text-align: center;
 
         }
@@ -38,19 +55,39 @@
         }
         .header-logo {
             padding: 20px 40px;
-            color: white;
+            color: rgb(3, 2, 2);
         }
+        @keyframes example {
+            
+            0%  {background-color:""; left:500px; top:0px;}
+            100% {background-color:""; left:0px; top:0px;}
+          }
+        input[type=text], input[type=number],[type=email],textarea {  
+            width: 100%;  
+            padding: 10px;  
+            margin: 6px 0 10px 0;  
+            display: inline-block;  
+            border: none;  
+            background: #f1f1f1;  
+            position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+          }  
+          input[type=text]:focus, input[type=number]:focus,[type=email]:focus {  
+            background-color: aquamarine;  
+            outline: none;  
+          }  
     </style>
 </head>
 <body>
     <form method="POST" class="donation" id="donation" action="{% url 'donation' %}">
         {% csrf_token %}
         <div class="header">
-            <div class="header-logo">"The life that u lead is still a dream for many out there! start contributing what you can"</div>
+            <div class="header-logo">"The life that u lead is still a dream for many out there! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>start contributing what you can"</div>
         </div>
         <div class="content">
-            <div class="form-row"><div class="form-group">
-                <label for="name"><h3>Name :</h3></label>
+            <div class="form-row"><div class="form-group"><br><br><br><br>
+                <label for="name"><h4>Name :</h4></label><br>
                 <input type="text" name="name" id="name" required/>
             </div>
             <!--<div class="form-row"><div class="form-group">
@@ -58,23 +95,23 @@
                 <input type="text" name="address" id="address" required/>
             </div>-->
             <div class="form-row"><div class="form-group">
-                <label for="phone"><h3>Phone :</h3></label>
+                <label for="phone"><h4>Phone :</h4></label><br>
                 <input type="number" name="phone" id="phone" required/>
             </div>
             <div class="form-row"><div class="form-group">
-                <label for="mail"><h3>Email :</h3></label>
+                <label for="mail"><h4>Email :</h4></label><br>
                 <input type="email" name="mail" id="mail" required/>
             </div>
             <div class="form-row"><div class="form-group">
-                <label for="nationality"><h3>Nationality :</h3></label>
+                <label for="nationality"><h4>Nationality :</h4></label><br>
                 <input type="text" name="nationality" id="nationality" required/>
             </div>
             <div class="form-row"><div class="form-group">
-                <label for="amt"><h3>Amount :</h3></label>
+                <label for="amt"><h4>Amount :</h4></label><br>
                 <input type="number" min="1" name="amt" id="amt" required/>
             </div>
             <div class="form-submit">
-                 <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                 <b><input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;" class="btn btn-success" name="submit" id="submit" /></b>
              </div>
             </div>
         </div>
