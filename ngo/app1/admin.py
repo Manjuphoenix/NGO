@@ -12,9 +12,7 @@ class CauseAdmin(admin.ModelAdmin):
     list_display = ['name', 'goal', 'raised', 'img', ]'''
 
 admin.site.register(Volunteer)
-admin.site.register(cause)
 admin.site.register(Contributors)
 admin.site.register(Donation)
 admin.site.register(Events)
 admin.site.register(Adopt)
-admin.site.register(Index)

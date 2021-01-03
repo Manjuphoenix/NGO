@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from .models import *
 # Create your views here.
 
+global value
+
 def  index(request):
-    cause1 = cause()
+    '''cause1 = cause()
     cause1.name = "Deepak"
     cause1.goal = 20000
     cause1.img = 'passion_1.png'
@@ -20,12 +22,20 @@ def  index(request):
     cause3.name = "cause3"
     cause3.goal = 40000
     cause3.raised = 35000
-    cause3.img = 'passion_3.png'
+    cause3.img = 'passion_3.png'''
     count = int(Volunteer.objects.count())
+    donCount = int(Donation.objects.count())
+    event = int(Events.objects.count())
 
+    value = 0
+    don = 0
+    donations = Donation.objects.all()
+    for i in range(donCount):
+        don = int(donations[i].amt) + don
+    value = don
 
     
-    causes = [cause1,cause2,cause3]
+    #causes = [cause1,cause2,cause3]
     if request.method == "POST":
         FName = request.POST.get("fname")
         LName = request.POST.get("lname")
@@ -35,7 +45,7 @@ def  index(request):
         print(FName + LName + Email + Message)
         form.save()
         return redirect("/")
-    return render(request, "index.html",{'causes':causes, 'count': count})
+    return render(request, "index.html",{ 'count': count, 'value': value, 'event': event})
 
 
 def  adopt(request):
@@ -54,14 +64,22 @@ def  donation(request):
     #for i in range(count):
      #   print(Donation.amount[i])
     #print(amount)
+    count = int(Donation.objects.count())
+    value = 0
+    donations = Donation.objects.all()
     if request.method == "POST":
         Name = request.POST.get("name")
         Phone = request.POST.get("phone")
         Mail = request.POST.get("mail")
+        don = 0
         Amt = request.POST.get("amt")
         Nationality = request.POST.get("nationality")
         #amount = sum(Donation.amt)
-        print(Donation.amt)
+        print(donations[0].amt)
+        for i in range(count):
+            don = int(donations[i].amt) + don
+        value = don + int(Amt)
+        print(don + int(Amt))
         form = Donation.objects.create(name = Name, phone = Phone, mail = Mail, amt = Amt, nationality = Nationality)
         form.save()
         return redirect("/")
@@ -69,13 +87,22 @@ def  donation(request):
     return render(request, "donation.html")
 
 def  events(request):
+    if request.method == "POST":
+        Organizer = request.POST.get("organizer")
+        Title = request.POST.get("eventName")
+        Type = request.POST.get("type")
+        Date = request.POST.get("date")
+        Place = request.POST.get("place")
+        form = Events.objects.create( eventName = Title, organizer = Organizer, eventType = Type, date = Date, place = Place )
+        form.save()
+        return redirect("/")
     return render(request, "events.html")
     
 def volunteer(request):
     if request.method == "POST":
         #print('working')
         User_name = request.POST.get("name")
-        Email = request.POST.get("email")
+        Email = request.POST.get("mail")
         Phone = request.POST.get("phone")
         Country = request.POST.get("country")
         #print(User_name,Email,Phone,Country)
